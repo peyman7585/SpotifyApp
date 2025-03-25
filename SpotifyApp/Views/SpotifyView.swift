@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SpotifyView: View {
     var body: some View {
-        NavigationView{
             ZStack{
                 Image("billi-pic")
                     .resizable()
@@ -60,8 +59,7 @@ struct SpotifyView: View {
             }
                 
             }
-
-    }
+    
 }
 
 #Preview {
