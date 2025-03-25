@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SpotifyView: View {
+    @State var isGetStart = false
+    
     var body: some View {
             ZStack{
                 Image("billi-pic")
@@ -39,7 +41,7 @@ struct SpotifyView: View {
                     }
                     VStack{
                         Button{
-                            
+                            isGetStart = true
                         }label: {
                             
                                 Text("Get Started")
@@ -56,6 +58,9 @@ struct SpotifyView: View {
                     .padding(.bottom,40)
                 }
 
+            }
+            .fullScreenCover(isPresented: $isGetStart) {
+                SpotifyMode(isGetStart: $isGetStart)
             }
                 
             }

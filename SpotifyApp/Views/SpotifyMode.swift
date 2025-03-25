@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SpotifyMode: View {
+    @Binding var isGetStart:Bool
+   
     var body: some View {
         ZStack{
             Image("modeBackground")
@@ -90,5 +92,5 @@ struct SpotifyMode: View {
 }
 
 #Preview {
-    SpotifyMode()
+    SpotifyMode(isGetStart: .constant(true))
 }
