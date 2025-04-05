@@ -22,7 +22,7 @@ struct LoadingView: View {
                     
             }
             .containerRelativeFrame([.horizontal, .vertical])
-            .background(.black)
+            .background(Color("priBlack"))
             .onAppear {
                           DispatchQueue.main.asyncAfter(deadline: .now() + 3 ) {
                               isActive = true
