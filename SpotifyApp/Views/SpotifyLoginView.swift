@@ -59,7 +59,7 @@ struct SpotifyLoginView: View {
                                     .padding(.bottom,25)
                                 
                                 HStack{
-                                    NavigationLink(destination: SpotifyLoginView()){
+                                    NavigationLink(destination: SpotifyRegister(text: "")){
                                         ButtonView(text: "Register")
                                     }
                                     NavigationLink(destination: SpotifySignIn(text: "")){

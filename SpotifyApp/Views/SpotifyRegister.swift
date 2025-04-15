@@ -1,13 +1,13 @@
 //
-//  SpotifySignIn.swift
+//  SpotifyRegister.swift
 //  SpotifyApp
 //
-//  Created by Peyman on 4/14/25.
+//  Created by Peyman on 4/15/25.
 //
 
 import SwiftUI
 
-struct SpotifySignIn: View {
+struct SpotifyRegister: View {
     @Environment(\.dismiss) var dismiss
     @State private var placeholder = ""
     @State var text: String
@@ -20,7 +20,7 @@ struct SpotifySignIn: View {
                         .padding(.top,-55)
                     
                     VStack{
-                        Text("Sign In")
+                        Text("Register")
                             .font(.system(size: 30, weight: .bold, design: .default))
                             .foregroundColor(Color("priFont3"))
                             .padding()
@@ -37,25 +37,15 @@ struct SpotifySignIn: View {
                         }
                         .padding(.bottom,20)
                        
-                        SPInputView(text: text, placeholder: "Enter Username Or Email")
+                        SPInputView(text: text, placeholder: "Full Name")
+                        
+                        SPInputView(text: text, placeholder: "Enter Email")
                             .padding()
                         SPInputPassView(text: text, placeholder: "Password")
-                          
-                        HStack{
-                            Button{
-                                print("Recovery")
-                            }label: {
-                                Text("Recovery password")
-                                    .font(.system(size: 14, weight: .bold, design: .default))
-                                    .foregroundColor(Color("priFont"))
-                                    .padding(.leading, 20)
-                                Spacer()
-                            }
-                           
-                          }
+           
                         
-                        .padding()
-                        SPLorgeBT(text: "Sign In")
+                            .padding(.bottom,10)
+                        SPLorgeBT(text: "Create Account")
                         
                         HStack{
                             Divider()
@@ -87,15 +77,15 @@ struct SpotifySignIn: View {
                     }
                     
                     HStack{
-                        Text("Not A Member?")
+                        Text("Do You Have An Account?")
                             .font(.system(size: 14, weight: .bold, design: .default))
                             .foregroundColor(Color("priFont"))
                             .padding(.trailing, -5)
-                        Text("Register now")
+                        Text("Sign In")
                             .font(.system(size: 14, weight: .bold, design: .default))
                             .foregroundColor(Color("priBlue"))
                     }
-                    .padding(.top,40)
+                    .padding(.top,30)
                     Spacer()
                 }
                 .padding()
@@ -129,5 +119,5 @@ struct SpotifySignIn: View {
 }
 
 #Preview {
-    SpotifySignIn(text: "")
+    SpotifyRegister( text: "")
 }
