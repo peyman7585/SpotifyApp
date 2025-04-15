@@ -17,10 +17,7 @@ struct SpotifyView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
-                    Image("spotify")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 196, height: 59)
+                    SpotifyIcon()
                     Spacer()
                     
                 }
@@ -43,14 +40,7 @@ struct SpotifyView: View {
                         Button{
                             isGetStart = true
                         }label: {
-                            
-                                Text("Get Started")
-                                    .font(.title2)
-                                    .frame(width: 329, height: 92)
-                                    .foregroundColor(.white)
-                                    .background(Color("ButtonColor"))
-                                    .cornerRadius(25)
-                                
+                            SPLorgeBT(text: "Get Started")
                         }
                       
                     }

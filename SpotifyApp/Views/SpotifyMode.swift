@@ -17,11 +17,7 @@ struct SpotifyMode: View {
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    Image("spotify")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 196, height: 59)
-                    
+                    SpotifyIcon()
                     Spacer()
                     
                 }
@@ -76,13 +72,7 @@ struct SpotifyMode: View {
                     }
                     VStack{
                         NavigationLink(destination: SpotifyLoginView()){
-                                    Text("Continue")
-                                        .font(.title2)
-                                        .frame(width: 329, height: 92)
-                                        .foregroundColor(.white)
-                                        .background(Color("ButtonColor"))
-                                        .cornerRadius(25)
-
+                            SPLorgeBT(text: "Continue")
                         }
                         
                       

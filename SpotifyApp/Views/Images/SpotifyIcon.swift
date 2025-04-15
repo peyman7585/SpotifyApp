@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct SpotifyIcon: View {
+    var width: CGFloat = 196
+    var height: CGFloat = 59
+    
     var body: some View {
         VStack{
             Image("spotify")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 196, height: 59)
+                .frame(width: width, height: height)
             
             Spacer()
             
