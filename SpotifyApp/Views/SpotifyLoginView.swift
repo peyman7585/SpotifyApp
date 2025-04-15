@@ -62,7 +62,7 @@ struct SpotifyLoginView: View {
                                     NavigationLink(destination: SpotifyLoginView()){
                                         ButtonView(text: "Register")
                                     }
-                                    NavigationLink(destination: SpotifySignIn()){
+                                    NavigationLink(destination: SpotifySignIn(text: "")){
                                         Text("Sign in")
                                             .font(.title2)
                                             .frame(width: 147, height: 73)
@@ -82,7 +82,7 @@ struct SpotifyLoginView: View {
                     
                 }
                 .containerRelativeFrame([.horizontal, .vertical])
-                .background(Color("priBlack"))
+                .background(Color("priBackground"))
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
