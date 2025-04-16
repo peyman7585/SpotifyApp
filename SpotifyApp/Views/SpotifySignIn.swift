@@ -11,6 +11,7 @@ struct SpotifySignIn: View {
     @Environment(\.dismiss) var dismiss
     @State private var placeholder = ""
     @State var text: String
+    @State var isButtonEnter = false
     var body: some View {
         NavigationStack {
             
@@ -55,7 +56,12 @@ struct SpotifySignIn: View {
                           }
                         
                         .padding()
-                        SPLorgeBT(text: "Sign In")
+                        Button{
+                            isButtonEnter = true
+                        }label: {
+                            SPLorgeBT(text: "Sign In")
+                        }
+                        
                         
                         HStack{
                             Divider()
@@ -98,31 +104,35 @@ struct SpotifySignIn: View {
                     .padding(.top,40)
                     Spacer()
                 }
-                .padding()
-                .containerRelativeFrame([.horizontal, .vertical])
-                .background(Color("priBackground"))
-                .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            ZStack{
-                                Circle()
-                                    .fill(Color("prigray"))
-                                    .frame(width: 24, height: 24)
-                                    .shadow(radius: 10)
-                                Image("Left2")
-                                    .foregroundColor(.blue)
-                                    .imageScale(.large)
-                            }
-                            
-                        }
-                    }
-                    
                 }
+            .padding()
+            .containerRelativeFrame([.horizontal, .vertical])
+            .background(Color("priBackground"))
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        ZStack{
+                            Circle()
+                                .fill(Color("prigray"))
+                                .frame(width: 24, height: 24)
+                                .shadow(radius: 10)
+                            Image("Left2")
+                                .foregroundColor(.blue)
+                                .imageScale(.large)
+                        }
+                        
+                    }
+                }
+                
             }
-            
+               .fullScreenCover(isPresented: $isButtonEnter) {
+                   SpotifyMainView(isButtonEnter: $isButtonEnter)
+ 
+            }
+       
         }
        
     }

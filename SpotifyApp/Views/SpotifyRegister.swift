@@ -11,6 +11,7 @@ struct SpotifyRegister: View {
     @Environment(\.dismiss) var dismiss
     @State private var placeholder = ""
     @State var text: String
+    @State var isButtonEnter = false
     var body: some View {
         NavigationStack {
             
@@ -45,7 +46,13 @@ struct SpotifyRegister: View {
            
                         
                             .padding(.bottom,10)
-                        SPLorgeBT(text: "Create Account")
+                        
+                        Button{
+                            isButtonEnter = true
+                        }label: {
+                            SPLorgeBT(text: "Create Account")
+                        }
+                       
                         
                         HStack{
                             Divider()
@@ -110,6 +117,9 @@ struct SpotifyRegister: View {
                         }
                     }
                     
+                }
+                .fullScreenCover(isPresented: $isButtonEnter) {
+                    SpotifyMainView(isButtonEnter: $isButtonEnter)
                 }
             }
             
