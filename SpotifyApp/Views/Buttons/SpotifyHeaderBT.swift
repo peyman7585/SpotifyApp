@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SpotifyHeaderBT: View {
+    @State var text: String
     var body: some View {
         HStack{
             Spacer()
-            Text("Now Playing")
+            Text(text)
                 .font(.system(size: 18, weight: .bold, design: .default))
                 .foregroundColor(Color("priFont3"))
                 .padding(.leading ,17)
@@ -27,5 +28,5 @@ struct SpotifyHeaderBT: View {
 }
 
 #Preview {
-    SpotifyHeaderBT()
+    SpotifyHeaderBT(text: "")
 }

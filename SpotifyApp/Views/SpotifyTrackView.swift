@@ -13,7 +13,7 @@ struct SpotifyTrackView: View {
         NavigationStack{
             ZStack{
                 VStack{
-                    SpotifyHeaderBT()
+                    SpotifyHeaderBT(text: "Now Playing")
                     .padding(.bottom,25)
                     
                     VStack{

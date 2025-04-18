@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SpotifyPlayerView: View {
+    
     var body: some View {
         VStack{
             HStack{
