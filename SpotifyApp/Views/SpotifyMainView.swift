@@ -166,10 +166,13 @@ struct SpotifyMainView: View {
                             .foregroundColor(Color("priFont3"))
                             .padding(.leading,35)
                         Spacer()
-                        Text("See More")
-                            .font(.system(size: 16, weight: .bold, design: .default))
-                            .foregroundColor(Color("priFont"))
-                            .padding(.trailing,35)
+                        NavigationLink(destination: SpotifyPlaylistView()){
+                            Text("See More")
+                                .font(.system(size: 16, weight: .bold, design: .default))
+                                .foregroundColor(Color("priFont"))
+                                .padding(.trailing,35)
+                        }
+                     
                         
                     }
                     VStack{
